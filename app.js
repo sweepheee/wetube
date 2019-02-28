@@ -12,7 +12,8 @@ const app = express();
 
 
 app.use(helmet());
-app.set("view engine", "pug"); // 확장자면 pug인걸 찾음. 
+app.set("view engine", "pug"); // 확장자명 pug인걸 찾음. 
+app.use("/uploads", express.static("uploads")); //directory에서 파일을 찾아주는 미들웨어함수
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
