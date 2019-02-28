@@ -18,8 +18,6 @@ const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
 
-
-
 const routes = {
     home: HOME,
     join: JOIN,
@@ -28,7 +26,7 @@ const routes = {
     search: SEARCH,
     users: USERS,
     userDetail: (id) => {
-        if(id) {
+        if (id) {
             return `/users/${id}`;
         } else {
             return USER_DETAIL;
@@ -39,20 +37,26 @@ const routes = {
     videos: VIDEOS,
     upload: UPLOAD,
     videoDetail: (id) => {
-        if(id) {
+        if (id) {
             return `/videos/${id}`;
-        }else {
+        } else {
             return VIDEO_DETAIL;
         }
     },
-    editVideo: (id) => {
-        if(id) {
-            return `/videos/${id}/edit`
-        } else {
-            return EDIT_VIDEO;
+    editVideo: id => {
+        if (id) {
+            return `/videos/${id}/edit`;
         }
+        return EDIT_VIDEO;
     },
-    deleteVideo: DELETE_VIDEO
+    deleteVideo: id => {
+        if (id) {
+            return `/videos/${id}/delete`;
+            // eslint-disable-next-line no-else-return
+        } else {
+            return DELETE_VIDEO;
+        }
+    }
 };
 
 export default routes;

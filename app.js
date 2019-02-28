@@ -8,12 +8,14 @@ import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 import { localsMiddleware } from "./middlewares";
+
 const app = express();
 
 
 app.use(helmet());
 app.set("view engine", "pug"); // 확장자명 pug인걸 찾음. 
-app.use("/uploads", express.static("uploads")); //directory에서 파일을 찾아주는 미들웨어함수
+app.use("/uploads", express.static("uploads")); // directory에서 파일을 찾아주는 미들웨어함수
+app.use("/static", express.static("static"));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
