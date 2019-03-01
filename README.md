@@ -30,6 +30,7 @@ mongo로 연결.
 use we-tube -> 스키마 연결
 show collections -> 어떤 테이블있는지 확인
 db.테이블이름.remove({}) -> 안에 컬럼 다 삭제
+db.테이블이름.find({}) ->db 컬럼 확인.
 
 페이지가 연결될때까지
 비디오라우터 -> (주소입력(펑션이될수도있음), 열려질페이지와연결(비디오컨트롤러에 정해준 변수))
@@ -72,3 +73,9 @@ scripts dev:assets 맨앞에 "cross-env ~~~~" 붙여줌
 npm install babel-loader
 
 npm install @babel/polyfill    -> 브라우저에서 지원하지않는 js지원하게해줌. ex)async
+
+
+npm install passport-local-mongoose    -> 소셜로그인기능주는 js
+npm i passport passport-local    ->사이트 자체 로그인 기능 js
+
+npm install express-session
